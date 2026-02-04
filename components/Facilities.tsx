@@ -131,10 +131,11 @@ export default function Facilities() {
           We take the kids for outdoor activities like picnics, field trips which enables the students to have joyful time. The school encourages them to participate in all kinds of activities they love. 
             </p>
           </div>
+          </div>
 
           <div className="flex flex-col items-center justify-center text-center py-12 px-4 facilities-header">
-  <div className="max-w-4xl mx-auto space-y-6">
-    <div className="text-base md:text-lg text-slate-700 leading-relaxed space-y-4">
+         <div className="max-w-4xl mx-auto space-y-6 text-center">
+         <div className="text-base md:text-lg text-slate-700 leading-relaxed space-y-4">
       <p>
         We break the cycle of regular education with <span className="text-school-red-600 font-semibold">stress-free education</span>. 
         Huge contributions are made to maintain physical, mental and emotional development of the children.
@@ -153,8 +154,9 @@ export default function Facilities() {
     </div>
   </div>
 </div>
+
         </div>
-      </div>
+     
     </section>
   );
 }

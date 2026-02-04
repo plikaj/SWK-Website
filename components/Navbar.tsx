@@ -26,25 +26,25 @@ export default function Navbar() {
   return (
     <>
   
-      <div className="bg-school-navy-700 text-white py-4 px-4 border-b border-white/10">
+      <div className="bg-school-navy-700 text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
           
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
               <a href="tel:+919246618264" className="flex items-center gap-1.5 hover:text-school-gold-400 transition-colors text-[11px] font-medium">
-                <svg className="w-3.5 h-3.5 text-school-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 +91 9246618264
-                <span className="bg-school-red-600 px-1  text-[9px] font-bold uppercase">VIP Road Branch</span>
+                <span className="bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded text-[9px] font-bold uppercase">VIP Road</span>
               </a>
-              <a href="tel:+919866186264" className="flex items-center gap-1.5 hover:text-school-gold-400 transition-colors text-[11px] font-medium">
-                <svg className="w-3.5 h-3.5 text-school-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <a href="tel:+919866186264" className="flex items-center gap-1.5 hover:text-fun-yellow-300 transition-colors text-[11px] font-medium">
+                <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 +91 9866186264
-                <span className="bg-school-red-600 px-1  text-[9px] font-bold uppercase">Gajuwaka Branch</span>
+                <span className="bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded text-[9px] font-bold uppercase">Gajuwaka</span>
               </a>
             </div>
           </div>
@@ -53,8 +53,8 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
            
             
-            <span className="bg-school-red-600 text-white px-2 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-wide">
-              Recognized by Govt. of Andhra Pradesh
+            <span className="bg-school-red-600 text-white px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wide">
+              Recognized by Govt. of AP
             </span>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function Navbar() {
       {/* Main Navbar */}
       <nav
         className={`sticky top-0 z-50 bg-white border-b transition-all duration-300 ${
-          isScrolled ? 'shadow-elegant-lg h-16' : 'border-gray-200 h-20'
+          isScrolled ? 'shadow-lg h-16' : 'border-gray-200 h-20 shadow-md'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
@@ -84,11 +84,7 @@ export default function Navbar() {
                 />
               </div>
               
-              <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-bold text-school-navy-700 tracking-tight leading-tight">
-                  School Of Wonder Kids
-                </span>
-              </div>
+              
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -109,8 +105,8 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden p-2 rounded-lg border border-gray-300">
-              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button className="md:hidden p-2 rounded-lg bg-school-red-600 text-white hover:bg-school-red-700 transition-colors">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>

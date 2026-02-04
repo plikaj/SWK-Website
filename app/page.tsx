@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import AboutUs from '@/components/AboutUs';
+import PlayAsYouLearn from '@/components/PlayAsYouLearn';
 import Facilities from '@/components/Facilities';
 import Gallery from '@/components/Gallery';
 import RecordsTimeline from '@/components/RecordsTimeline';
@@ -13,13 +14,14 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutUs />
+      <PlayAsYouLearn />
       <Facilities />
       <Gallery />
       <RecordsTimeline />
       <AdmissionsForm />
       
       {/* Footer */}
-      <footer className="relative bg-school-navy-700 border-t border-school-navy-600 py-12 px-4">
+      <footer className="relative bg-school-navy-700 py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             {/* Brand */}
@@ -36,7 +38,7 @@ export default function Home() {
                   <div className="text-xs text-gray-300 uppercase tracking-wider">Excellence in Education</div>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm max-w-md">
+              <p className="text-white/90 text-sm max-w-md">
                 Unlocking extraordinary potential in every child through innovative, experience-based education.
               </p>
             </div>
@@ -60,18 +62,18 @@ export default function Home() {
                 <li>+91 9246618264</li>
                 <li>+91 9866186264</li>
                 <li className="pt-4">
-                   <div className="flex items-center gap-3 mr-2 border-r border-white/20 pr-4">
+                   <div className="flex items-center gap-3">
               <a href="#" className="text-white hover:text-school-gold-400 transition-colors">
-                <Facebook size={15} />
+                <Facebook size={18} />
               </a>
               <a href="#" className="text-white hover:text-school-gold-400 transition-colors">
-                <Instagram size={15} />
+                <Instagram size={18} />
               </a>
               <a href="#" className="text-white hover:text-school-gold-400 transition-colors">
-                <Youtube size={15} />
+                <Youtube size={18} />
               </a>
               <a href="#" className="text-white hover:text-school-gold-400 transition-colors">
-                <Mail size={15} />
+                <Mail size={18} />
               </a>
             </div>
                 </li>

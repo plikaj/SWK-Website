@@ -82,16 +82,16 @@ function TalentsShowcase() {
       if (charIndex < currentSentence.length) {
         setTypingText(currentSentence.substring(0, charIndex + 1));
         charIndex++;
-        typingRef.current = setTimeout(typeChar, 25);
+        typingRef.current = setTimeout(typeChar, 50);
       } else {
         typingRef.current = setTimeout(() => {
           setCurrentIndex((prev) => (prev + 1) % remainingTalents.length);
           setTypingText('');
-        }, 1000);
+        }, 3000);
       }
     };
 
-    typingRef.current = setTimeout(typeChar, 200);
+    typingRef.current = setTimeout(typeChar, 500);
 
     return () => {
       if (typingRef.current) clearTimeout(typingRef.current);
@@ -99,36 +99,14 @@ function TalentsShowcase() {
   }, [currentIndex]);
 
   return (
-    <div className="bg-gradient-to-br from-school-gold-50 to-school-red-50 rounded-3xl p-8 shadow-lg max-w-4xl mx-auto">
-      <h3 className="text-2xl font-bold text-school-navy-700 mb-6">Core Talents</h3>
-      <ul className="space-y-4">
-        {firstEightTalents.map((talent, index) => (
-          <li key={index} className="flex items-start gap-3">
-            <span className="flex-shrink-0 w-8 h-8 bg-school-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
-              {index + 1}
-            </span>
-            <span className="text-gray-700 text-base leading-relaxed pt-1">{talent}</span>
-          </li>
-        ))}
-        <li className="flex items-start gap-3 min-h-[2.5rem]">
-          <span className="flex-shrink-0 w-8 h-8 bg-school-gold-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
-            +
-          </span>
-          <span className="text-gray-700 text-base leading-relaxed pt-1">
-            {typingText}
-            <span className="inline-block w-0.5 h-5 bg-school-red-600 ml-0.5 animate-pulse" />
-          </span>
-        </li>
-      </ul>
-    </div>
-  );
-}
+    <div className=\"grid grid-cols-1 lg:grid-cols-2 gap-8\">\n      {/* First 8 Talents Card */}\n      <div className=\"bg-gradient-to-br from-school-gold-50 to-school-red-50 rounded-3xl p-8 shadow-lg\">\n        <h3 className=\"text-2xl font-bold text-school-navy-700 mb-6\">Core Talents</h3>\n        <ul className=\"space-y-4\">\n          {firstEightTalents.map((talent, index) => (\n            <li key={index} className=\"flex items-start gap-3\">\n              <span className=\"flex-shrink-0 w-8 h-8 bg-school-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm\">\n                {index + 1}\n              </span>\n              <span className=\"text-gray-700 text-base leading-relaxed pt-1\">{talent}</span>\n            </li>\n          ))}\n        </ul>\n      </div>\n\n      {/* Typing Animation Card */}\n      <div className=\"bg-gradient-to-br from-school-navy-50 to-school-gold-50 rounded-3xl p-8 shadow-lg flex flex-col justify-center\">\n        <h3 className=\"text-2xl font-bold text-school-navy-700 mb-6\">Additional Talents</h3>\n        <div className=\"bg-white rounded-2xl p-8 min-h-[200px] flex items-center justify-center shadow-inner\">\n          <p className=\"text-2xl text-gray-700 font-medium text-center leading-relaxed\">\n            {typingText}\n            <span className=\"inline-block w-1 h-6 bg-school-red-600 ml-1 animate-pulse\" />\n          </p>\n        </div>\n        <p className=\"text-sm text-gray-500 text-center mt-4\">Showcasing more amazing achievements...</p>\n      </div>\n    </div>\n  );\n}
 
 export default function AboutUs() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Animate each row as it comes into view
       gsap.utils.toArray('.about-row').forEach((row: any) => {
         gsap.from(row, {
           scrollTrigger: {
@@ -151,16 +129,16 @@ export default function AboutUs() {
     <div className="max-w-7xl mx-auto space-y-32">
 
          <div className="lg:col-span-2 text-center">
-          
+            
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 text-gray-800">
               Welcome to <span className="text-school-navy-700">School of Wonder Kids</span>
             </h2>
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>What is Education? Is it just making students carry a pile of books and recite a few lessons forcefully? Or does it stand for something greater?</p>
               <p>
-                For School of Wonder Kids, <span className="font-bold text-school-navy-700">Education is the most powerful weapon to change the world</span> and imparting the right education, thus, forms the base to make the leaders of tomorrow.
+                For School of Wonder Kids, Education is the most powerful weapon to change the world and imparting the right education, thus, forms the base to make the leaders of tomorrow.
               </p>
-              <p>Established in <span className="font-bold text-school-red-600">2001</span> with the concept of no books-no reading-no writing-no homework for KG classes & no loads of books and no homework from class 1 onwards, School of Wonder Kids in Visakhapatnam and Gajuwaka emerged as India's most distinct schools and is widely accepted and appreciated by parents and educationalists. The school has won several awards and accolades, and remains a top choice for parents choosing the best school in Visakhapatnam.</p>
+              <p>Established in 2001 with the concept of no books-no reading-no writing-no homework for KG classes & no loads of books and no homework from class 1 on wards, School of Wonder Kids in Visakhapatnam and Gajuwaka emerged as India’s most distinct schools and is widely accepted and appreciated by parents and educationalists. The school has won several awards and accolades, and remains a top choice for parents choosing the best school in Visakhapatnam.</p>
             
             </div>
           </div>
@@ -170,10 +148,10 @@ export default function AboutUs() {
         <div className="pt-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: 2, suffix: '', label: 'Branches', color: 'school-red' },
-              { number: 1000, suffix: '+', label: 'Students', color: 'school-navy' },
-              { number: 70, suffix: '', label: 'Teachers', color: 'school-gold' },
-              { number: 2000, suffix: '+', label: 'Happy Parents', color: 'school-red' },
+              { number: 500, suffix: '+', label: 'Students', color: 'school-red' },
+              { number: 128, suffix: '+', label: 'Records', color: 'school-navy' },
+              { number: 100, suffix: '%', label: 'Success Rate', color: 'school-gold' },
+              { number: 15, suffix: '+', label: 'Years Experience', color: 'school-red' },
             ].map((stat, index) => (
               <div key={index} className="about-card text-center">
                 <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -202,6 +180,7 @@ export default function AboutUs() {
             
             </div>
           </div>
+          {/* Right Side Image Placeholders */}
           <div className="grid grid-cols-1 gap-4">
             <div className="aspect-[4/3] bg-gray-100 rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400">Image Placeholder 1</div>
             <div className="aspect-[4/3] bg-gray-100 rounded-xl border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-400">Image Placeholder 2</div>
@@ -221,11 +200,11 @@ export default function AboutUs() {
               </div>
               <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6">
                 <h4 className="font-bold text-school-navy-700 mb-2 text-xl">Karthik</h4>
-                <p>If the first is first, the second is better than the first. Karthik, the second son started his career with 'Ugadi Puraskar' from Madras Telugu Academy . This itself is a testimony of his world wide knowledge. At the age of 2+ he knew the capital cities of different nations, identified different countries in the world map, recognised the flags of different nations. He could answer more than five thousand questions like the authors of different books, inventors of different inventions, geographical surnames, superlatives, abbreviations etc. Many prestigious organisations conferred upon him titles like Wonder kid, Super kid, Balaratna etc. Awards and encomiums are no new to him.</p>
+                <p>If the first is first, the second is better than the first. Karthik, the second son started his career with ‘Ugadi Puraskar’ from Madras Telugu Academy . This itself is a testimony of his world wide knowledge. At the age of 2+ he knew the capital cities of different nations, identified different countries in the world map, recognised the flags of different nations. He could answer more than five thousand questions like the authors of different books, inventors of different inventions, geographical surnames, superlatives, abbreviations etc. Many prestigious organisations conferred upon him titles like Wonder kid, Super kid, Balaratna etc. Awards and encomiums are no new to him.</p>
               </div>
               <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6">
                 <h4 className="font-bold text-school-gold-600 mb-2 text-xl">Sarvani</h4>
-                <p>Sarvani, the youngest, has the silver lining right from her infancy. From her cradle she went to the stage to Dance. If she dances a classical item it is a real classic. The melody of her ghungru rings in the inner ears of the audience. Lights are real sights when she dances. Her accuracy, perfection, concentration for dance brought her recognition earlier than her brother and sister. Sarvani's 'folk' is a 'talk'. Call it a Bhangra, call it a Bharatanatyam, call it a Kuchipudi, she is an amalgam precipitated into artistic form of a professional dancer. Awards made her responsible. She understood the value of 'recognition' before she recognised alphabet. All the three attracted wide coverage in dailies, magazines and TV Channels.</p>
+                <p>Sarvani, the youngest, has the silver lining right from her infancy. From her cradle she went to the stage to Dance. If she dances a classical item it is a real classic. The melody of her ghungru rings in the inner ears of the audience. Lights are real sights when she dances. Her accuracy, perfection, concentration for dance brought her recognition earlier than her brother and sister. Sarvani’s ‘folk’ is a ‘talk’. Call it a Bhangra, call it a Bharatanatyam, call it a Kuchipudi, she is an amalgam precipitated into artistic form of a professional dancer. Awards made her responsible. She understood the value of ‘recognition’ before she recognised alphabet. All the three attracted wide coverage in dailies, magazines and TV Channels.</p>
               </div>
             </div>
           </div>
