@@ -153,31 +153,7 @@ export default function RecordsTimeline() {
           </div>
         </div>
 
-        {/* Stats cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20 stats-cards">
-          {[
-            { label: 'Total Records', value: '128+', color: 'gold' },
-            { label: 'Students', value: '500+', color: 'navy' },
-            { label: 'Success Rate', value: '100%', color: 'red' },
-          ].map((stat, index) => (
-            <div
-              key={stat.label}
-              className="timeline-stat bg-white rounded-2xl p-8 border-2 border-gray-200 text-center hover:scale-105 hover:shadow-elegant-lg transition-all duration-300"
-            >
-              <div
-                className={`
-                  text-5xl font-bold mb-2
-                  ${stat.color === 'gold' && 'text-school-gold-600'}
-                  ${stat.color === 'navy' && 'text-school-navy-700'}
-                  ${stat.color === 'red' && 'text-school-red-600'}
-                `}
-              >
-                {stat.value}
-              </div>
-              <div className="text-gray-600 text-lg">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+       
       </div>
     </section>
   );

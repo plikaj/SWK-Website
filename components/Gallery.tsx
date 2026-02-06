@@ -91,10 +91,7 @@ export default function Gallery() {
               key={index}
               className="gallery-item group relative bg-gray-50 rounded-2xl overflow-hidden border-2 border-gray-200 hover:border-school-navy-700 hover:shadow-elegant-lg transition-all duration-300 cursor-pointer"
             >
-              {/* Image Placeholder */}
-              <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-8xl group-hover:scale-110 transition-transform duration-300">
-                {item.image}
-              </div>
+             
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-school-navy-700 via-school-navy-700/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">

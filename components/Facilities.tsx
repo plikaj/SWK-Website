@@ -41,7 +41,7 @@ export default function Facilities() {
       {/* Hero Image Section with Overlay Nav */}
       <div className="relative h-[400px] overflow-hidden">
         <img 
-          src="/path-to-your-hero-image.jpg" 
+          src="/assets/swk-logo.jpg" 
           alt="Students Image" 
           className="w-full h-full object-cover object-top"
         />

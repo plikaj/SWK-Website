@@ -62,19 +62,19 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav
-        className={`sticky top-0 z-50 bg-white border-b transition-all duration-300 ${
-          isScrolled ? 'shadow-lg h-16' : 'border-gray-200 h-20 shadow-md'
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-school-navy-700 shadow-lg h-16' : 'bg-transparent h-20'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="w-full px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full">
             
-            {/* Logo Section */}
+            {/* Logo Section - Left */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex items-center gap-4"
+              className="flex items-center"
             >
               <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-white shadow-md overflow-hidden shrink-0">
                 <img 
@@ -83,11 +83,9 @@ export default function Navbar() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              
-              
             </motion.div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - Right */}
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
               {navLinks.map((link, index) => (
                 <motion.a
@@ -96,7 +94,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-[13px] font-bold text-gray-700 hover:text-school-navy-700 transition-colors relative group uppercase tracking-widest"
+                  className="text-[13px] font-bold text-white hover:text-school-gold-400 transition-colors relative group uppercase tracking-widest"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-school-red-600 group-hover:w-full transition-all duration-300" />
